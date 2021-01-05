@@ -1,0 +1,12 @@
+{
+    "name": "tic-tac-toe",
+    "version": "1.0.0",
+    "description": "A Vanilla JS implementation of tic tac toe game",
+    "scripts": {
+        "start": "serve"
+    },
+    "dependencies": {
+        "serve": "^10.0.1"
+    },
+    "author": "Ayush Porwal"
+}
