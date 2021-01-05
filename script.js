@@ -17,6 +17,13 @@ const win_ways = [
     [2, 4, 6],
 ];
 
+const choosePlayers = () => {
+    const player1 = document.querySelector('.player1');
+    let player1Value = 'Hii';
+    player1.addEventListener('change', (e) => (player1Value = e.target.value));
+    console.log(player1Value);
+};
+
 const showHoverEffect = () => {
     board.classList.remove('x');
     board.classList.remove('o');
@@ -81,5 +88,6 @@ const startGame = () => {
 
 restartButton.addEventListener('click', startGame);
 
+choosePlayers();
 showHoverEffect();
 startGame();

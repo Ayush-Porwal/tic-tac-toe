@@ -4,19 +4,47 @@
 
 body {
     background-color: #224;
+    color: white;
 }
 
-h1 {
+.banner {
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.banner h1 {
     font-size: 5rem;
     margin: 10px;
     font-family: 'Hanalei Fill';
-    color: white;
     letter-spacing: 0.2rem;
+}
+
+.banner h2 {
+    font-size: 1.5rem;
+    margin: 10px;
+    font-family: 'Hanalei Fill';
+    letter-spacing: 0.2rem;
+}
+
+.banner th,
+td {
+    color: white;
+    padding: 0.5rem;
+    font-family: 'Lobster Two';
+    font-size: 1.5rem;
+    border: 1px solid white;
+}
+
+.banner table {
+    margin: 0.5rem;
+}
+
+.players {
+    font-size: 1.5rem;
+    font-family: 'Lobster Two';
 }
 
 .board {
