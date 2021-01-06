@@ -50,14 +50,6 @@ const endgame = () => {
     endGameMessage.classList.add('show');
 };
 
-const handleScore = (turn) => {
-    if (turn) {
-        scorep1.innerHTML = parseInt(scorep1.innerHTML) + 1;
-    } else {
-        scorep2.innerHTML = parseInt(scorep2.innerHTML) + 1;
-    }
-};
-
 const handleClick = (e) => {
     const currentClass = turn ? 'x' : 'o';
     const targetCell = e.target;
@@ -66,10 +58,15 @@ const handleClick = (e) => {
     targetCell.classList.add(currentClass);
     // check win or lose
     if (checkWin(currentClass)) {
-        handleScore(turn);
+        if (turn) {
+            scorep1.innerHTML = parseInt(scorep1.innerHTML) + 2;
+        } else {
+            scorep2.innerHTML = parseInt(scorep2.innerHTML) + 2;
+        }
         endgame();
     } else if (checkDraw()) {
-        handleScore(turn);
+        scorep1.innerHTML = parseInt(scorep1.innerHTML) + 1;
+        scorep2.innerHTML = parseInt(scorep2.innerHTML) + 1;
         endgame();
     } else {
         // switch turn
