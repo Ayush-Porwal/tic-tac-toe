@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles.css" />
         <script src="script.js" defer></script>
-        <script src="data.js" defer></script>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
             href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap"
@@ -27,13 +26,15 @@
                     <th>Name</th>
                     <th>Points</th>
                 </tr>
+                <tr>
+                    <td>Player 1</td>
+                    <td class="player1">0</td>
+                </tr>
+                <tr>
+                    <td>Player 2</td>
+                    <td class="player2">0</td>
+                </tr>
             </table>
-            <div class="players">
-                <label for="player1">Player 1</label>
-                <select name="player1" id="player1" class="player1"></select>
-                <label for="player2">Player 2</label>
-                <select name="player2" id="player2" class="player2"></select>
-            </div>
         </div>
 
         <div class="board" id="board">

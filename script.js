@@ -6,6 +6,9 @@ const endGameMessageText = document.querySelector('.winningmessage');
 const endGameMessage = document.querySelector('.gameendmessage');
 const restartButton = document.querySelector('.restart');
 
+const scorep1 = document.querySelector('.player1');
+const scorep2 = document.querySelector('.player2');
+
 const win_ways = [
     [0, 1, 2],
     [3, 4, 5],
@@ -16,13 +19,6 @@ const win_ways = [
     [0, 4, 8],
     [2, 4, 6],
 ];
-
-const choosePlayers = () => {
-    const player1 = document.querySelector('.player1');
-    let player1Value = 'Hii';
-    player1.addEventListener('change', (e) => (player1Value = e.target.value));
-    console.log(player1Value);
-};
 
 const showHoverEffect = () => {
     board.classList.remove('x');
@@ -54,6 +50,14 @@ const endgame = () => {
     endGameMessage.classList.add('show');
 };
 
+const handleScore = (turn) => {
+    if (turn) {
+        scorep1.innerHTML = parseInt(scorep1.innerHTML) + 1;
+    } else {
+        scorep2.innerHTML = parseInt(scorep2.innerHTML) + 1;
+    }
+};
+
 const handleClick = (e) => {
     const currentClass = turn ? 'x' : 'o';
     const targetCell = e.target;
@@ -62,8 +66,10 @@ const handleClick = (e) => {
     targetCell.classList.add(currentClass);
     // check win or lose
     if (checkWin(currentClass)) {
+        handleScore(turn);
         endgame();
     } else if (checkDraw()) {
+        handleScore(turn);
         endgame();
     } else {
         // switch turn
@@ -88,6 +94,5 @@ const startGame = () => {
 
 restartButton.addEventListener('click', startGame);
 
-choosePlayers();
 showHoverEffect();
 startGame();
